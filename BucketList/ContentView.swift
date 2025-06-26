@@ -6,16 +6,24 @@
 //
 
 import SwiftUI
+struct User:Identifiable{
+    let id = UUID()
+    var firstname: String
+    var lastname: String
+}
 
 struct ContentView: View {
+    let users = [
+        User(firstname: "David", lastname: "Schwarznegar"),
+        User(firstname: "Arnold", lastname: "Burger"),
+        User(firstname: "Ketty", lastname: "Perry")
+    ].sorted{
+        $1.firstname < $0.firstname
+    }
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(users){ user in
+            Text("\(user.lastname), \(user.firstname)")
         }
-        .padding()
     }
 }
 
