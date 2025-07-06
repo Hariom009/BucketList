@@ -12,8 +12,9 @@ struct BucketListApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MapView()
-                .mapStyle(.hybrid(elevation: .realistic))
+//            MapView()
+//                .mapStyle(.hybrid(elevation: .realistic))
+            TouchandFaceID()
         }
     }
 }
