@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct BucketListApp: App {
+
     var body: some Scene {
         WindowGroup {
-          SwiftDataButtonView()
+            MapView()
+                .mapStyle(.hybrid(elevation: .realistic))
         }
     }
 }
